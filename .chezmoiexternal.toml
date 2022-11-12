@@ -11,3 +11,12 @@
     url = "https://github.com/romkatv/powerlevel10k/archive/v1.16.1.tar.gz"
     exact = true
     stripComponents = 1
+["bin/oh-my-posh"]
+    type = "file"
+    url  = "https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64"
+    refreshPeriod = "168h"
+    executable = true
+[".poshthemes"]
+    type = "archive"
+    url = "https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/themes.zip"
+    refreshPeriod = "168h"
