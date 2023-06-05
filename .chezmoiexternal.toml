@@ -1,3 +1,7 @@
+{{ $nerdFontsLatestRelease := (gitHubLatestRelease "ryanoasis/nerd-fonts").TagName }}
+{{ $powerlevel10kLatestRelease := (gitHubLatestRelease "romkatv/powerlevel10k").TagName }}
+{{ $firaCodeLatestRelease := (gitHubLatestRelease "tonsky/FiraCode").TagName }}
+
 [".oh-my-zsh"]
     type = "git-repo"
     url = "https://github.com/ohmyzsh/ohmyzsh.git"
@@ -8,9 +12,10 @@
     refreshPeriod = "168h"
 [".oh-my-zsh/custom/themes/powerlevel10k"]
     type = "archive"
-    url = "https://github.com/romkatv/powerlevel10k/archive/v1.16.1.tar.gz"
+    url = "https://github.com/romkatv/powerlevel10k/archive/{{ $powerlevel10kLatestRelease }}.tar.gz"
     exact = true
     stripComponents = 1
+    refreshPeriod = "168h"
 ["bin/oh-my-posh"]
     type = "file"
     url  = "https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/posh-linux-amd64"
@@ -19,4 +24,12 @@
 [".poshthemes"]
     type = "archive"
     url = "https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/themes.zip"
+    refreshPeriod = "168h"
+[".local/share/fonts"]
+    type = "archive"
+    url = "https://github.com/tonsky/FiraCode/releases/download/{{ $firaCodeLatestRelease }}/Fira_Code_v{{ $firaCodeLatestRelease }}.zip "
+    refreshPeriod = "168h"
+[".local/share/konsole/Dracula.colorscheme"]
+    type = "file"
+    url = "https://raw.githubusercontent.com/dracula/konsole/master/Dracula.colorscheme"
     refreshPeriod = "168h"
